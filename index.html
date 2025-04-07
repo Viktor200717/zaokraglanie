@@ -26,27 +26,27 @@
             var najblizsza = Math.round(liczba);
             var wDol = Math.floor(liczba);
             var wGore = Math.ceil(liczba);
-            var obcieta = Math.trunc(liczba);
+            var bezUlamkowa = Math.trunc(liczba);
 
 
-            document.write('<div class="przypadek" id="round">');
+            document.write('<div  id="round">');
             document.write('<h3>1. Zaokrąglenie do najbliższej liczby całkowitej</h3>');
             document.write('<div class="wynik">Wynik: ' + najblizsza + '</div>');
             document.write('</div>');
 
-            document.write('<div class="przypadek" id="floor">');
+            document.write('<div  id="floor">');
             document.write('<h3>2. Zaokrąglenie zawsze w dół</h3>');
             document.write('<div class="wynik">Wynik: ' + wDol + '</div>');
             document.write('</div>');
 
-            document.write('<div class="przypadek" id="ceil">');
+            document.write('<div  id="ceil">');
             document.write('<h3>3. Zaokrąglenie zawsze w górę</h3>');
             document.write('<div class="wynik">Wynik: ' + wGore + '</div>');
             document.write('</div>');
 
-            document.write('<div class="przypadek" id="trunc">');
+            document.write('<div id="trunc">');
             document.write('<h3>4. Usunięcie części ułamkowej</h3>');
-            document.write('<div class="wynik">Wynik: ' + obcieta + '</div>');
+            document.write('<div class="wynik">Wynik: ' + bezUlamkowa + '</div>');
             document.write('</div>');
 
             document.close();
@@ -68,10 +68,10 @@
     </form>
 
     <div id="wyniki">
-        <div class="przypadek" id="round"></div>
-        <div class="przypadek" id="floor"></div>
-        <div class="przypadek" id="ceil"></div>
-        <div class="przypadek" id="trunc"></div>
+        <div  id="round"></div>
+        <div  id="floor"></div>
+        <div  id="ceil"></div>
+        <div id="trunc"></div>
     </div>
 
 
