@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt #28 Zaokrąglanie</title>
+    <script>
+        function zaokraglijLiczbe() {
+            var wprowadzonaWartosc = document.getElementById('poleLiczba').value;
+
+
+            if (wprowadzonaWartosc === '' || isNaN(wprowadzonaWartosc)) {
+                alert('Błąd: Proszę wprowadzić poprawną liczbę!');
+                return false;
+            }
+
+            var liczba = parseFloat(wprowadzonaWartosc);
+
+
+            if (Number.isInteger(liczba)) {
+                alert('Informacja: Wprowadzona liczba jest już całkowita - nie ma potrzeby zaokrąglania.');
+                return false;
+            }
+
+
+            var najblizsza = Math.round(liczba);
+            var wDol = Math.floor(liczba);
+            var wGore = Math.ceil(liczba);
+            var obcieta = Math.trunc(liczba);
+
+
+            document.write('<div class="przypadek" id="round">');
+            document.write('<h3>1. Zaokrąglenie do najbliższej liczby całkowitej</h3>');
+            document.write('<div class="wynik">Wynik: ' + najblizsza + '</div>');
+            document.write('</div>');
+
+            document.write('<div class="przypadek" id="floor">');
+            document.write('<h3>2. Zaokrąglenie zawsze w dół</h3>');
+            document.write('<div class="wynik">Wynik: ' + wDol + '</div>');
+            document.write('</div>');
+
+            document.write('<div class="przypadek" id="ceil">');
+            document.write('<h3>3. Zaokrąglenie zawsze w górę</h3>');
+            document.write('<div class="wynik">Wynik: ' + wGore + '</div>');
+            document.write('</div>');
+
+            document.write('<div class="przypadek" id="trunc">');
+            document.write('<h3>4. Usunięcie części ułamkowej</h3>');
+            document.write('<div class="wynik">Wynik: ' + obcieta + '</div>');
+            document.write('</div>');
+
+            document.close();
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Zaokrąglanie liczb</h1>
+
+    <form onsubmit="zaokraglijLiczbe(); return false;">
+        <div>
+            <label for="poleLiczba">Wprowadź liczbę:</label>
+            <input type="number" id="poleLiczba"  step="any">
+            <input type="submit" value="Zaokrąglij">
+        </div>
+
+    </form>
+
+    <div id="wyniki">
+        <div class="przypadek" id="round"></div>
+        <div class="przypadek" id="floor"></div>
+        <div class="przypadek" id="ceil"></div>
+        <div class="przypadek" id="trunc"></div>
+    </div>
+
+
+</body>
+</html>
