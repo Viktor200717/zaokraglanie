@@ -6,15 +6,15 @@
     <title>Projekt #28 Zaokrąglanie</title>
     <script>
         function zaokraglijLiczbe() {
-            var wprowadzonaWartosc = document.getElementById('poleLiczba').value;
+            var Wartosc = document.getElementById('poleLiczba').value;
 
 
-            if (wprowadzonaWartosc === '' || isNaN(wprowadzonaWartosc)) {
+            if (Wartosc === '' || isNaN(Wartosc)) {
                 alert('Błąd: Proszę wprowadzić poprawną liczbę!');
                 return false;
             }
 
-            var liczba = parseFloat(wprowadzonaWartosc);
+            var liczba = parseFloat(Wartosc);
 
 
             if (Number.isInteger(liczba)) {
@@ -48,8 +48,6 @@
             document.write('<h3>4. Usunięcie części ułamkowej</h3>');
             document.write('<div class="wynik">Wynik: ' + bezUlamkowa + '</div>');
             document.write('</div>');
-
-            document.close();
 
             return false;
         }
